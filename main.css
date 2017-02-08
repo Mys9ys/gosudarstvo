@@ -1,0 +1,114 @@
+body
+{
+    background-color: steelblue;
+    font-family: "Baskerville Old Face", "Comic Sans MS";
+}
+#contry_name
+{
+    position: absolute;
+    margin: auto;
+    top: -26px;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    left:37%;
+    border: 3px solid midnightblue;
+    background-color: deepskyblue;
+    color: midnightblue;
+    border-radius: 15px 15px 5px 5px;
+
+}
+.main
+{
+    position: relative;
+    margin: auto;
+    width: 800px;
+    height: 100%;
+    background-color: azure;
+    border: 3px solid midnightblue;
+    border-radius: 5px;
+}
+.kalendar
+{
+    position: absolute;
+    top: 5px;
+    right: 35px;
+    width: 70px;
+    height: 25px;
+    border: 2px solid darkolivegreen;
+}
+.day
+{
+    position: absolute;
+    left: -2px;
+    width: 20px;
+    height: 25px;
+    text-align: center;
+    border-right: 2px solid darkolivegreen;
+}
+.month
+{
+    position: absolute;
+    left: 18px;
+    width: 20px;
+    height: 25px;
+    text-align: center;
+    border-right: 2px solid darkolivegreen;
+}
+.year
+{
+    position: absolute;
+    left: 40px;
+    width: 30px;
+    height: 25px;
+    text-align: center;
+}
+.nextday
+{
+    position: absolute;
+    right: -30px;
+    top:-2px;
+    width: 30px;
+    height: 29px;
+    border: 2px solid darkolivegreen;
+    cursor: pointer;
+    background-color: darkolivegreen;
+}
+#Ffirstenter
+{
+    position: absolute;
+    left: 30%;
+    width: 270px;
+    border: 2px solid darkgrey;
+}
+#Bfirstenter
+{
+
+}
+.container
+{
+    position: absolute;
+    bottom: 0%;
+    width: 800px;
+    height: 400px;
+    border: 2px solid firebrick;
+}
+.human
+{
+    float: left;
+    width: 35px;
+    height: 35px;
+    border: 1px solid forestgreen;
+    margin: 5px;
+    text-align: center;
+}
+.human_hiden
+{
+    display: none;
+}
+#company_create_box{
+    display: none;
+}
+#view_create_company{
+
+}
