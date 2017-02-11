@@ -1,10 +1,13 @@
 <?php
 
 class company
+    extends AbstractModel
 {
-    public $id;
-    public $name;
-    static $money;
+    protected static $table = 'company';
+
+//    public $id;
+//    public $name;
+//    static $money;
 
     public function costs($costs){
         echo "отнимаем $this->money <br>";

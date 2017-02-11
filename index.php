@@ -6,51 +6,47 @@
 </head>
 <body>
 <?php
-require_once __DIR__."/db.php";
-require_once __DIR__."/classes/human.php";
-require_once __DIR__."/view.php";
-require_once __DIR__."/classes/db.php";
-
-$db = new db();
-$specialization=$db->dbSelectOne(specialization);
-//echo "<PRE>";
-//var_dump($specialization);
+require_once __DIR__ . '/autoload.php';
+require_once __DIR__ . '/view.php';
+require_once __DIR__ . '/functions.php';
+//
+//$contry = new country();
+//$result = $contry->findAll()[0];
+//$keys = $result->keys();
+//$array_count = count($keys);
+//echo $array_count;
+//echo "<pre>";
+//var_dump($keys);
 //die;
-//foreach ($specialization as $key => $value)
-//{
-//    echo "ключ: $key значение: $value";
-////    $array[$key]=$value;
+
+//$find = new sampleCompany();
+//$result = $find->findAll();
+//$array = SelectObjectProperty($result);
+//echo json_encode(array("sampleCompany" => $array));
+//$result = $find->findAll()[0];
+//$keys = $result->keys();
+//$result = $find->findAll();
+//$count_result = count($result);
+
+
+
+
+//foreach ($select as $col) {
+//    for ($i=0;$i<$array_count;$i++){
+//
+//    }
 //}
-echo "<PRE>";
-var_dump($specialization);
-//echo json_encode(array("specialization" => $specialization));
-//echo "<PRE>";
-//$title=$result['title'];
-//print_r($specialization);
-//var_dump($result);
-//$title=$result->title;
-//echo $title;
-//var_dump($title);
 
 
-$human = new human();
-$human->name = '431';
-$human->costs(5);
-//$human->income(10);
-//$human->costs(7);
-//$human->income(12);
-$human->getClassName();
-echo "<pre>";
-var_dump($human);
-$human = new human();
-$human->name = '331';
-$human->getClassName();
-$human->income(10);
-echo "<pre>";
-var_dump($human);
+
+//$country = new country();
+//$result=$country->findAll()[0];
+//$title = 'title';
+// echo $result->$title;
+
 
 ?>
-<h4><?php echo "$human->money"?></h4>
+
 
 </body>
 </html>

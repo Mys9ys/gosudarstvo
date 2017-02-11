@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/AbstractModel.php';
 /**
  * Created by PhpStorm.
  * User: Мусяус
@@ -7,10 +8,13 @@
  * Time: 18:26
  */
 class human
+    extends AbstractModel
 {
-    public $name;
-    public $money;
-    public $job;
+    protected static $table = 'human';
+//    public $name;
+//    public $money;
+//    public $job;
+
 
     function getClassName(){
         echo __CLASS__;
@@ -18,10 +22,10 @@ class human
 
     public function costs($costs){
         $this->money=$this->money-$costs;
-        dbupdatemany(human,money,$this->money,name,$this->name);
+        dbupdatemany('human','money',$this->money,'name',$this->name);
     }
     public function income($income){
         $this->money=$this->money+$income;
-        dbupdatemany(human,money,$this->money,name,$this->name);
+        dbupdatemany('human','money',$this->money,'name',$this->name);
     }
 }

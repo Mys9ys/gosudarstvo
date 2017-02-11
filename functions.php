@@ -1,18 +1,20 @@
 <?php
-require_once __DIR__."/classes/db.php";
+/**
+ * Created by PhpStorm.
+ * User: Мусяус
+ * Date: 11.02.2017
+ * Time: 18:53
+ */
 
-function dbselect($table,$selector){
-//    $db = new db();
-    $dbselect=mysql_query("SELECT * FROM $table ");
-    $dbvalue= mysql_fetch_assoc($dbselect);
-    return $value=$dbvalue[$selector];
-//    return $res=$db->query('SELECT * FROM $table WHERE ')
-}
-
-function dbupdateone($table,$selector,$count){
-    $update=mysql_query("UPDATE $table SET $selector=$selector+$count ");
-}
-
-function dbupdatemany($table,$selector,$count,$dbname,$name){
-    $update=mysql_query("UPDATE $table SET $selector=$selector+$count WHERE $dbname=$name ");
+function SelectObjectProperty ($result){
+    $specialization = [];
+    foreach ($result as $col)
+    {
+        $array = (array)$col;
+        foreach ($array as $col)
+        {
+            array_push($specialization, $col);
+        }
+    }
+    return $specialization;
 }

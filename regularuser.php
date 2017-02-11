@@ -1,10 +1,14 @@
 <?php
-require_once __DIR__."/kalendar.php";
+require_once __DIR__ . "/calendar.php";
+$calendar = new calendar();
+$result=$calendar->findAll()[0];
+$country = new country();
+$countryRes=$country->findAll()[0];
 ?>
 <button id="reset">Заново</button>
 <button id="view_create_company">Создать компанию</button>
 <?php
-if (dbselect(kalendar,totalday)==1 && dbselect(country,population)==0)
+if ($result->totalday==1 && $countryRes->population==0)
     {?>
     <div id="human_create_box">
         <h4>Введите начальное количество человечков</h4>
@@ -20,5 +24,7 @@ if (dbselect(kalendar,totalday)==1 && dbselect(country,population)==0)
     <input id="company_abbreviation" type="text" placeholder="Сокращение...">
     <h4>Выберите специализацию</h4>
     <select id="company_specialization"></select>
+    <h4>Выбрать из списка</h4>
+    <select id="sample_company"><option value="0">Выбрать</option></select>
     <button id="create_company">Создать</button>
 </div>

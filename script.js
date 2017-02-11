@@ -87,8 +87,6 @@ $(function ()
         });
         $('#human_create_box').empty();
         alert(count_creat_human+' человечков успешно добавлены!');
-        // location.reload();
-        $('#company_create_box').css("display","block");
     })
 })
 // обработка селекта по специализациям
@@ -112,7 +110,7 @@ $(function ()
     });
 
 })
-
+            //Создание новой компании
 $(function ()
 {
     $('#create_company').click(function ()
@@ -120,22 +118,46 @@ $(function ()
         var company_name = $('#company_name').val();
         var company_abbreviation = $('#company_abbreviation').val();
         var company_specialization = $('#company_specialization').val();
+        var sample_company = $('#sample_company').val();
         $.ajax(
         {
             url: "inputjson.php",
             type: "POST",
             dataType: "json",
-            data: {company_name: company_name, company_abbreviation:company_abbreviation, company_specialization:company_specialization }
+            data: {company_name: company_name, company_abbreviation:company_abbreviation, company_specialization:company_specialization, sample_company:sample_company }
         });
         $('#company_create_box').append('<br><span>Компания <b>'+company_name+'</b> успешно создана</span>');
     })
 })
-
+            // Кнопка вызова меню создания компании
 $(function ()
 {
     $('#view_create_company').click(function ()
     {
         $('#company_create_box').toggle();
     })
+
+})
+            // выпадающий список шаблонных компаний
+$(function ()
+{
+    var sampleCompany = 1;
+    $.ajax(
+        {
+            url: "inputjson.php",
+            type: "POST",
+            dataType: "json",
+            data: {sampleCompany: sampleCompany},
+            success: function(json)
+            {
+                $.each(json.sampleCompany, function(index, value)
+                {
+                    var teg='<option value="'+value.id+'">'+value.name+'</option>';
+
+                    $('#sample_company').append(teg);
+                })
+                alert(teg);
+            }
+        });
 
 })
